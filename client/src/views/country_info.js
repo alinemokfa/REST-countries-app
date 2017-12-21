@@ -3,10 +3,10 @@ const CountryInfo = function () {
 }
 
 CountryInfo.prototype.render = function (country) {
-  const select = document.querySelector('#countries-select');
-  const option = document.createElement('option');
-  option.innerText = `${country.name}`;
-  select.appendChild(option);
+ const city = this.createListItem("city", country.capital);
+  console.log(country);
+
+  this.ul.appendChild(city);
 }
 
 
