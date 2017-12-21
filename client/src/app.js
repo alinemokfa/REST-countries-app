@@ -15,7 +15,7 @@ const app = function () {
     if (this.status !== 200) return;
     const jsonString = this.responseText;
     const countries = JSON.parse(jsonString);
-    
+
     countriesList.setCountries(countries);
     countriesSelect.render(countries);
   });
