@@ -84,7 +84,7 @@ const app = function () {
     if (this.status !== 200) return;
     const jsonString = this.responseText;
     const countries = JSON.parse(jsonString);
-    
+
     countriesList.setCountries(countries);
     countriesSelect.render(countries);
   });
@@ -148,8 +148,12 @@ const CountryInfo = function () {
 }
 
 CountryInfo.prototype.render = function (country) {
-  // TODO: Render country info
+ const city = this.createListItem("city", country.capital);
+  console.log(country);
+
+  this.ul.appendChild(city);
 }
+
 
 CountryInfo.prototype.createListItem = function (label, content) {
   const li = document.createElement('li');
